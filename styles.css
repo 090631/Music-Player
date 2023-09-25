@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-  background: url(https://images.wallpapersden.com/image/download/milky-way-starry-sky-landscape_bGZqaGyUmZqaraWkpJRnaW5urWZpZWs.jpg);
+  background: url(assets/img/background.jpg);
   background-size: cover;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
