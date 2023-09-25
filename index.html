@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Music Player</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="https://kit.fontawesome.com/220b166d65.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="canvas">
+
+    <div class="swiper mySwiper">
+
+        <div class="swiper-wrapper" id="wrapper">
+
+            <div class="swiper-slide" id="slide">
+                <div id="card">
+                    <img src="assets/img/img1.jpg" />
+                    <audio id="song">
+                        <source src="assets/audio/audio1.mp3" type="audio/mpeg">
+                    </audio>
+                    <input type="range" value="0">
+                    <div class="controls">
+                        <div class="bt"><i class="fa-solid fa-backward"></i></div>
+                        <div class="bt" id="click"><i class="fa-solid fa-play" id="button"></i></div>
+                        <div class="bt"><i class="fa-solid fa-forward"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide" id="slide">
+                <div id="card">
+                    <img src="assets/img/img2.jpg" />
+                    <audio id="page">
+                        <source src="assets/audio/audio1.mp3" type="audio/mpeg">
+                    </audio>
+                    <i class="fa-solid fa-play"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide" id="slide">
+                <div id="card">
+                    <img src="assets/img/img3.jpg" />
+                    <audio id="page">
+                        <source src="assets/audio/audio1.mp3" type="audio/mpeg">
+                    </audio>
+                    <i class="fa-solid fa-play"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide" id="slide">
+                <div id="card">
+                    <img src="assets/img/img4.jpg" />
+                    <audio id="page">
+                        <source src="assets/audio/audio1.mp3" type="audio/mpeg">
+                    </audio>
+                    <i class="fa-solid fa-play"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide" id="slide">
+                <div id="card">
+                    <img src="assets/img/img5.jpg" />
+                    <audio id="page">
+                        <source src="assets/audio/audio1.mp3" type="audio/mpeg">
+                    </audio>
+                    <i class="fa-solid fa-play"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</div>
+</body>
+
+</html>
