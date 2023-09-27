@@ -60,6 +60,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
       play_pause(i);
     });
 
+    song[i].addEventListener("loadedmetadata", function(event){
+      progress_bar[i].max = song[i].duration;
+      progress_bar[i].value = song[i].currentTime;
+    });
+    
     progress_bar[i].addEventListener("change", function(){
       progress_change(i);
     });
