@@ -9,11 +9,12 @@ html, body {
   height: 100%;
 }
 
-body {
+body{
   margin: 0;
   padding: 0;
   font-size: 14px;
-
+  display: grid;
+  place-items: center;
   color: #000;
   background: url("https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80");
   background-size: cover;
@@ -37,15 +38,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     margin: 1rem;
     padding: 1rem 1rem;
     border-radius: 0.5rem;
-    width: 95%;
+    width: 96%;
     aspect-ratio: 2/1;
 
-    background-color: #3b3b3bdd;
+    background-color: #202319dd;
 }
+
 
 .swiper {
   width: 75%;
@@ -53,101 +56,179 @@ body {
   padding-bottom: 100px;
 }
 
-#wrapper *:not(i, input, .button, .buttonplay, .card, .controls){
+#wrapper .swiper-slide-shadow-coverflow{
   background-color: #3b3b3baa;
-  border-radius: 1rem;
+  border-radius: 3rem;
 }
 
 .swiper-slide {
   background-position: center;
   background-size: cover;
 
-  width: 275px;
-  height: 400px;
-}
-
-.swiper-slide img {
-  margin-top: .75rem;
-
-  width: 90%;
-  aspect-ratio: 20/29;
-  border-radius: 1rem;
-
-  background-size: cover;
+  width: 250px;
+  height: 500px;
 }
 
 .card {
   display: grid;
   place-items: center;
-  background-color: white;
+  background-image: linear-gradient(#6131dd, #432da2);
+  position: relative;
 
   width: 100%;
   height: 100%;
-  border-radius: 1rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  border: 2px;
+  background-size: cover;
+}
 
+.card::before, .canvas::before{
+  background: linear-gradient(
+    transparent,
+    white,
+    transparent
+  );
+  position: absolute;
+  height: 50%;
+  width: 2px;
+  left: 0px;
+  top: 45%;
+  opacity: 0;
+  content: "";
+  transition: all .25s ease;
+}
+
+.card::after, .canvas::after{
+  background: linear-gradient(
+    transparent,
+    white,
+    transparent
+  );
+  position: absolute;
+  height: 50%;
+  width: 2px;
+  right: 0px;
+  top: 45%;
+  opacity: 0;
+  content: "";
+  transition: all .25s ease;
+}
+
+.card:hover::before, .card:hover::after, .canvas:hover::before, .canvas:hover::after{
+  top:10%;
+  opacity: 1;
+}
+
+.top{
+  background-image: linear-gradient(to left, #7645df, #a95ef7);
+  border-radius: 3rem 3rem 0rem 0rem;
+  width: 100%;
+  aspect-ratio: 9/2;
+  align-self: flex-start;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 60%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.img img {
+  border-radius: 1rem;
+  position: absolute;
   background-size: cover;
 }
 
 .controls {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
+  align-content: center;
+  align-self: flex-end;
+  gap: 1rem;
+  padding-bottom: 1rem;
   position: relative;
   translate: 0 0;
+  border-radius: 1.5rem 1.5rem 3rem 3rem;
 
   width: 100%;
+  aspect-ratio: 3/2;
+  background-image: linear-gradient(to top left, #7c56c7, #d97efd);;
 }
+
 
 .button{
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  translate: 0 -35px;
+  position: relative;
 
-  margin: 20px;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
-  border: 1rem;
-
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
   color: black;
   background-color: white;
-  box-shadow: 0 10px 20px rgba(255, 26, 26, .22);
 
   cursor: pointer;
 }
 
-.buttonplay{
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  translate: 0 -35px;
-
-  margin: 20px;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  border: 1rem;
-
-  color: black;
-  background-color: white;
-  box-shadow: 0 10px 20px rgba(255, 26, 26, .22);
-
-  cursor: pointer;
+#button{
+  height: 45px;
+  width: 45px;
 }
 
-.prev #prevS, .next #nextS{
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  translate: 0 -200%;
+h4 {
+  flex: 1 0 100%;
+  text-align: center;
+}
 
-  margin: 20px;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  border: 1rem;
+/*.button::before, #back::before, #forward::before{
+  background: linear-gradient(
+  90deg,
+  transparent,
+  white,
+  transparent
+  );
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 125%;
+  right: 50%;
+  opacity: 0;
+  content: "";
+  transition: all .25s ease;
+}
 
+.button:hover::before, .next:hover ~ #forward::before, .prev:hover ~ #back::before{
+  right: 0;
+  opacity: 1;
+}*/
+
+.button:hover, #nextS:hover ~ #forward, #prevS:hover ~ #back{
+  box-shadow: 0 10px 20px rgba(255, 255, 255, .22);
+  transition: box-shadow 0.25s ease-In-Out;
+}
+
+.button:active{
+  background-color: #a9bdbf;
+  border: 5px solid #a9bdbf;
+  transition: all .1s ease-In-Out;
+}
+
+.next, .prev{
+  position: relative;
+}
+
+#prevS, #nextS{
+  postion: absolute;
   color: #ffffff00;
   background-color: #ffffff00;
   cursor: pointer;
@@ -156,23 +237,91 @@ body {
 input[type="range"] {
   -webkit-appearance: none;
 
-  translate: 0 -35px;
+  width: 50%;
+  height: 4px;
 
-  width: 80%;
-  height: 6px;
-
-  background: black;
+  background: white;
   cursor: pointer;
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
 
-  width: 25px;
-  height:25px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-
-  border: 5px solid white;
-  background: black;
+  background: white;
   box-shadow: 0 10px 20px rgba(255, 26, 26, .22);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 20/1;
+  background-color: black;
+  position: relative;
+}
+
+footer .pagination {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  margin: 1rem;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  color: black;
+  border-radius: 50%;
+  position: relative;
+  background-color: white;
+}
+
+footer::before{
+  background: linear-gradient(
+    90deg,
+    transparent,
+    white,
+    transparent
+  );
+  position: absolute;
+  height: 3px;
+  width: 60%;
+  top: 0;
+  right: 100%;
+  opacity: 0;
+  content: "";
+  transition: all .25s ease;
+}
+
+footer:hover::before{
+  right: 20%;
+  opacity: 1;
+}
+
+
+.pagination::before{
+  background: linear-gradient(
+    90deg,
+    transparent,
+    white,
+    transparent
+  );
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 125%;
+  right: 50%;
+  opacity: 0;
+  content: "";
+  transition: all .25s ease;
+}
+
+.pagination:hover::before{
+  right: 0;
+  opacity: 1;
+}
+
+a {
+  text-decoration: none;
 }
