@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
   ];
 
   const progress_bar = document.querySelectorAll(`#progress_bar`);
-  const song = document.querySelectorAll(`#song`);
+  const song = document.querySelectorAll(`#audio`);
   const button_icon = document.querySelectorAll(`#button_icon`);
   const button = document.querySelectorAll(`#button`);
   const next = document.querySelectorAll(`#nextS`);
@@ -59,17 +59,16 @@ document.addEventListener('DOMContentLoaded', function(event) {
     button[i].addEventListener("click", function(event){
       play_pause(i);
     });
-
     song[i].addEventListener("loadedmetadata", function(event){
       progress_bar[i].max = song[i].duration;
       progress_bar[i].value = song[i].currentTime;
     });
-    
     progress_bar[i].addEventListener("change", function(){
       progress_change(i);
     });
 
-    if(song[i].play()) {
+
+    if(song[i].paused) {
       setInterval(()=>{progress_bar[i].value = song[i].currentTime;},
       500);
     };
