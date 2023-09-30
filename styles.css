@@ -16,12 +16,40 @@ body{
   display: grid;
   place-items: center;
   color: #000;
-  background: url("https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80");
-  background-size: cover;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  transition: background .5s ease-in-out;
   animation: fadeIn 1s;
+  -webkit-transition: background-image .1s;
 
+}
+
+.card1 {
+  background-image: url("https://images.unsplash.com/photo-1507471509451-1d04d60f896d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80");
+  background-size: cover;
+  -webkit-transition: background-image .1s;
+}
+
+.card2 {
+  background-image: url("https://images.unsplash.com/photo-1609894851180-7be27983da7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80");
+  background-size: cover;
+  -webkit-transition: background-image .1s;
+}
+
+.card3 {
+  background: url("https://images.unsplash.com/photo-1476370648495-3533f64427a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80");
+  background-size: cover;
+  -webkit-transition: background-image .1s;
+}
+
+.card4 {
+  background: url("https://images.unsplash.com/photo-1570284613060-766c33850e00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80");
+  background-size: cover;
+  -webkit-transition: background-image .1s;
+}
+
+.card5 {
+  background: url("https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1828&q=80");
+  background-size: cover;
+  -webkit-transition: background-image .1s;
 }
 
 @keyframes fadeIn {
@@ -46,7 +74,7 @@ body{
     width: 96%;
     aspect-ratio: 2/1;
 
-    background-color: #202319dd;
+    background-color: #20231988;
 }
 
 
@@ -72,7 +100,6 @@ body{
 .card {
   display: grid;
   place-items: center;
-  background-image: linear-gradient(#6131dd, #432da2);
   position: relative;
 
   width: 100%;
@@ -81,6 +108,26 @@ body{
   overflow: hidden;
   border: 2px;
   background-size: cover;
+}
+
+.redC {
+  background-image: linear-gradient(#d53030, #b46464);
+}
+
+.yelwC {
+  background-image: linear-gradient(#d19236, #bfa87d);
+}
+
+.blackC {
+  background-image: linear-gradient(#000000, #333333);
+}
+
+.blueC {
+  background-image: linear-gradient(#111f26, #559bbe);
+}
+
+.pinkC {
+  background-image: linear-gradient(#6131dd, #432da2);
 }
 
 .card::before, .canvas::before{
@@ -121,11 +168,35 @@ body{
 }
 
 .top{
-  background-image: linear-gradient(to left, #7645df, #a95ef7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 3rem 3rem 0rem 0rem;
   width: 100%;
   aspect-ratio: 9/2;
+  font-size: 2rem;
+  color: white;
   align-self: flex-start;
+}
+
+.redT {
+  background-image: linear-gradient(#fc7b7b, #d73737);
+}
+
+.yelwT {
+  background-image: linear-gradient(#fad778, #c99b53);
+}
+
+.blackT {
+  background-image: linear-gradient(#333333, #121212);
+}
+
+.blueT {
+  background-image: linear-gradient(#3d8882, #294c5d);
+}
+
+.pinkT {
+  background-image: linear-gradient(to bottom, #a95ef7, #6938da);
 }
 
 .img {
@@ -133,16 +204,29 @@ body{
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 60%;
+  width: 80%;
   aspect-ratio: 1/1;
   overflow: hidden;
   border-radius: 1rem;
 }
 
 .img img {
+  width: 100%;
+  height: 100%;
   border-radius: 1rem;
   position: absolute;
   background-size: cover;
+}
+
+#songName {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+#artist {
+  font-size: 0.75rem;
+  color: grey;
 }
 
 .controls {
@@ -160,9 +244,34 @@ body{
 
   width: 100%;
   aspect-ratio: 3/2;
-  background-image: linear-gradient(to top left, #7c56c7, #d97efd);;
 }
 
+.redB {
+  background-image: linear-gradient(to top left, #d73737, #fc7b7b);
+}
+
+.yelwB {
+  background-image: linear-gradient(to top left, #c99b53, #fad778);
+}
+
+.blackB {
+  background-image: linear-gradient(to top left, #121212, #333333);
+}
+
+.blueB {
+  background-image: linear-gradient(to top left, #1b313b, #3d8882);
+}
+
+.pinkB {
+  background-image: linear-gradient(to top left, #5e31d7, #d97efd);
+}
+
+.controls #canvasControl {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .button{
   display: flex;
@@ -190,37 +299,14 @@ h4 {
   text-align: center;
 }
 
-/*.button::before, #back::before, #forward::before{
-  background: linear-gradient(
-  90deg,
-  transparent,
-  white,
-  transparent
-  );
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  top: 125%;
-  right: 50%;
-  opacity: 0;
-  content: "";
-  transition: all .25s ease;
-}
-
-.button:hover::before, .next:hover ~ #forward::before, .prev:hover ~ #back::before{
-  right: 0;
-  opacity: 1;
-}*/
-
 .button:hover, #nextS:hover ~ #forward, #prevS:hover ~ #back{
-  box-shadow: 0 10px 20px rgba(255, 255, 255, .22);
-  transition: box-shadow 0.25s ease-In-Out;
+  color: #7c56c7;
+  transition: all 0.25s ease-In-Out;
 }
 
 .button:active{
-  background-color: #a9bdbf;
-  border: 5px solid #a9bdbf;
-  transition: all .1s ease-In-Out;
+  box-shadow: 0 0 0;
+  transition: all .25s ease;
 }
 
 .next, .prev{
@@ -268,13 +354,17 @@ footer .pagination {
   display: flex;
   justify-content: center;
   place-items: center;
-  margin: 1rem;
+  margin: .75rem;
   width: 2rem;
   aspect-ratio: 1/1;
   color: black;
   border-radius: 50%;
   position: relative;
   background-color: white;
+}
+
+.glow {
+  box-shadow: 0 0 1rem #ffffff;
 }
 
 footer::before{
@@ -299,7 +389,6 @@ footer:hover::before{
   opacity: 1;
 }
 
-
 .pagination::before{
   background: linear-gradient(
     90deg,
@@ -317,9 +406,19 @@ footer:hover::before{
   transition: all .25s ease;
 }
 
-.pagination:hover::before{
+/*.pagination:hover::before{
   right: 0;
   opacity: 1;
+}*/
+
+.pagination:hover{
+  box-shadow: 0 0 1rem #ffffff;
+  transition: all .25s ease-Out;
+}
+.pagination:active{
+  background-color: grey;
+  box-shadow: 0 0 0 black;
+  transition: all .25s ease;
 }
 
 a {
