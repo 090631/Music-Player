@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(event) {
 
-  window.addEventListner('load', function() {
-      document.getElementById('card1').scrollIntoView();
-  });
+  document.getElementById('card1').scrollIntoView();
 
   var swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
