@@ -344,6 +344,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: end;
   width: 100%;
   aspect-ratio: 20/1;
   background-color: black;
