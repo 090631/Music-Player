@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(event) {
 
-  window.addEventListner('onload', function() {
+  window.addEventListner('load', function() {
       document.getElementById('card1').scrollIntoView();
   });
 
