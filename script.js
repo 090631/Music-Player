@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(event) {
 
   document.getElementById('card1').scrollIntoView();
-
   var swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
       grabCursor: true,
