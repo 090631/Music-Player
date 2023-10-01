@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function(event) {
 
-  window.onload = function() {
+  window.addEventListner('onload', function() {
       document.getElementById('card1').scrollIntoView();
-  };
+  });
 
   var swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
