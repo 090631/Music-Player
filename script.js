@@ -146,6 +146,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
     };
   };
 
+  if(progress_bar[i].value = song[i].duration) {
+      pause(i);
+      play(i+1);
+      change_bg(i+1);
+  }
+
   function play_pause(num){
     if (button_icon[num].classList.contains("fa-play")){
       song[num].play();
